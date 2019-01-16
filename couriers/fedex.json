@@ -4,7 +4,7 @@
   "tracking_numbers": [
     {
       "name": "FedEx Express (12)",
-      "regex": "\\s*(?<SerialNumber>([0-9]\\s*){11})(?<CheckDigit>[0-9]\\s*)",
+      "regex": "\\s*(?P<SerialNumber>([0-9]\\s*){11})(?P<CheckDigit>[0-9]\\s*)",
       "validation": {
         "checksum": {
           "name": "sum_product_with_weightings_and_modulo",
@@ -45,9 +45,9 @@
       "regex": [
         "\\s*1\\s*0\\s*0\\s*[0-9]\\s*[0-9]\\s*",
         "([0-9]\\s*){10}",
-        "(?<DestinationZip>([0-9]\\s*){5})",
-        "(?<SerialNumber>([0-9]\\s*){13})",
-        "(?<CheckDigit>[0-9]\\s*)"
+        "(?P<DestinationZip>([0-9]\\s*){5})",
+        "(?P<SerialNumber>([0-9]\\s*){13})",
+        "(?P<CheckDigit>[0-9]\\s*)"
       ],
       "validation": {
         "checksum": {
@@ -89,13 +89,13 @@
       "name": "FedEx SmartPost",
       "description": "IMpb CO3 standard",
       "regex": [
-        "\\s*(?<ApplicationIdentifier>9\\s*2\\s*)?",
-        "(?<SerialNumber>",
-        "(?<ServiceType>([0-9]\\s*){3})",
-        "(?<ShipperId>([0-9]\\s*){9})",
-        "(?<PackageId>([0-9]\\s*){7})",
+        "\\s*(?P<ApplicationIdentifier>9\\s*2\\s*)?",
+        "(?P<SerialNumber>",
+        "(?P<ServiceType>([0-9]\\s*){3})",
+        "(?P<ShipperId>([0-9]\\s*){9})",
+        "(?P<PackageId>([0-9]\\s*){7})",
         ")",
-        "(?<CheckDigit>([0-9]\\s*))"
+        "(?P<CheckDigit>([0-9]\\s*))"
       ],
       "validation": {
         "checksum": {
@@ -124,7 +124,7 @@
     },
     {
       "name": "FedEx Ground",
-      "regex": "\\s*(?<SerialNumber>([0-9]\\s*){14})(?<CheckDigit>([0-9]\\s*))",
+      "regex": "\\s*(?P<SerialNumber>([0-9]\\s*){14})(?P<CheckDigit>([0-9]\\s*))",
       "validation": {
         "checksum": {
           "name": "mod10",
@@ -147,7 +147,7 @@
     },
     {
       "name": "FedEx Ground (SSCC-18)",
-      "regex": "\\s*(?<ShippingContainerType>([0-9]\\s*){2})(?<SerialNumber>([0-9]\\s*){15})(?<CheckDigit>[0-9]\\s*)",
+      "regex": "\\s*(?P<ShippingContainerType>([0-9]\\s*){2})(?P<SerialNumber>([0-9]\\s*){15})(?P<CheckDigit>[0-9]\\s*)",
       "tracking_url": "https://www.fedex.com/apps/fedextrack/?tracknumbers=%s",
       "validation": {
         "checksum": {
@@ -193,11 +193,11 @@
     {
       "name": "FedEx Ground 96 (22)",
       "regex": [
-        "\\s*(?<ApplicationIdentifier>9\\s*6\\s*)",
-        "(?<SCNC>([0-9]\\s*){2})",
-        "(?<ServiceType>([0-9]\\s*){3})",
-        "(?<SerialNumber>(?<ShipperId>([0-9]\\s*){7})(?<PackageId>([0-9]\\s*){7}))",
-        "(?<CheckDigit>[0-9]\\s*)"
+        "\\s*(?P<ApplicationIdentifier>9\\s*6\\s*)",
+        "(?P<SCNC>([0-9]\\s*){2})",
+        "(?P<ServiceType>([0-9]\\s*){3})",
+        "(?P<SerialNumber>(?P<ShipperId>([0-9]\\s*){7})(?P<PackageId>([0-9]\\s*){7}))",
+        "(?P<CheckDigit>[0-9]\\s*)"
       ],
       "validation": {
         "checksum": {
@@ -220,13 +220,13 @@
     {
       "name": "FedEx Ground GSN",
       "regex": [
-        "\\s*(?<ApplicationIdentifier>9\\s*6\\s*)",
-        "(?<SCNC>([0-9]\\s*){2})",
+        "\\s*(?P<ApplicationIdentifier>9\\s*6\\s*)",
+        "(?P<SCNC>([0-9]\\s*){2})",
         "([0-9]\\s*){5}",
-        "(?<GSN>([0-9]\\s*){10})",
+        "(?P<GSN>([0-9]\\s*){10})",
         "[0-9]\\s*",
-        "(?<SerialNumber>([0-9]\\s*){13})",
-        "(?<CheckDigit>[0-9]\\s*)"
+        "(?P<SerialNumber>([0-9]\\s*){13})",
+        "(?P<CheckDigit>[0-9]\\s*)"
       ],
       "validation": {
         "checksum": {

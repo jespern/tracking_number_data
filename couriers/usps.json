@@ -7,12 +7,12 @@
       "name": "USPS 20",
       "description": "20 digit USPS numbers",
       "regex": [
-        "\\s*(?<SerialNumber>",
-        "(?<ServiceType>([0-9]\\s*){2})",
-        "(?<ShipperId>([0-9]\\s*){9})",
-        "(?<PackageId>([0-9]\\s*){8})",
+        "\\s*(?P<SerialNumber>",
+        "(?P<ServiceType>([0-9]\\s*){2})",
+        "(?P<ShipperId>([0-9]\\s*){9})",
+        "(?P<PackageId>([0-9]\\s*){8})",
         ")",
-        "(?<CheckDigit>[0-9]\\s*)"
+        "(?P<CheckDigit>[0-9]\\s*)"
       ],
       "validation": {
         "checksum": {
@@ -60,14 +60,14 @@
       "name": "USPS 34v2",
       "description": "variation on 34 digit USPS IMpd numbers",
       "regex": [
-        "\\s*(?<RoutingApplicationId>4\\s*2\\s*0\\s*)(?<DestinationZip>([0-9]\\s*){5})",
-        "(?<RoutingNumber>([0-9]\\s*){4})",
-        "(?<SerialNumber>",
-        "(?<ApplicationIdentifier>9\\s*[2345]\\s*)?",
-        "(?<ShipperId>([0-9]\\s*){8})",
-        "(?<PackageId>([0-9]\\s*){11})",
+        "\\s*(?P<RoutingApplicationId>4\\s*2\\s*0\\s*)(?P<DestinationZip>([0-9]\\s*){5})",
+        "(?P<RoutingNumber>([0-9]\\s*){4})",
+        "(?P<SerialNumber>",
+        "(?P<ApplicationIdentifier>9\\s*[2345]\\s*)?",
+        "(?P<ShipperId>([0-9]\\s*){8})",
+        "(?P<PackageId>([0-9]\\s*){11})",
         ")",
-        "(?<CheckDigit>[0-9]\\s*)"
+        "(?P<CheckDigit>[0-9]\\s*)"
       ],
       "validation": {
         "checksum": {
@@ -92,15 +92,15 @@
       "name": "USPS 91",
       "description": "USPS now calls this the IMpd barcode format",
       "regex": [
-        "\\s*(?:(?<RoutingApplicationId>4\\s*2\\s*0\\s*)(?<DestinationZip>([0-9]\\s*){5}))?",
-        "(?<SerialNumber>",
-        "(?<ApplicationIdentifier>9\\s*[12345]\\s*)?",
-        "(?<SCNC>([0-9]\\s*){2})",
-        "(?<ServiceType>([0-9]\\s*){2})",
-        "(?<ShipperId>([0-9]\\s*){8})",
-        "(?<PackageId>([0-9]\\s*){11}|([0-9]\\s*){7})",
+        "\\s*(?:(?P<RoutingApplicationId>4\\s*2\\s*0\\s*)(?P<DestinationZip>([0-9]\\s*){5}))?",
+        "(?P<SerialNumber>",
+        "(?P<ApplicationIdentifier>9\\s*[12345]\\s*)?",
+        "(?P<SCNC>([0-9]\\s*){2})",
+        "(?P<ServiceType>([0-9]\\s*){2})",
+        "(?P<ShipperId>([0-9]\\s*){8})",
+        "(?P<PackageId>([0-9]\\s*){11}|([0-9]\\s*){7})",
         ")",
-        "(?<CheckDigit>[0-9]\\s*)"
+        "(?P<CheckDigit>[0-9]\\s*)"
       ],
       "validation": {
         "checksum": {
